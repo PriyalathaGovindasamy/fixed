@@ -29,24 +29,3 @@ data.mta <- escalc(measure="ZCOR", ni=ni, ri=ri, data=data.mta, append=TRUE)
 fixed.meta <- rma(yi, vi, data=data.mta, method="FE")
 summary(fixed.meta)
 ```
-*** =sct
-```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
-
-test_function("str", args = "object",
-              not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
-
-test_object("good_movies")
-
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
-
-test_error()
-success_msg("Good work!")
-```
